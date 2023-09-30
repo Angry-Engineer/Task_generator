@@ -21,6 +21,20 @@ namespace Генератор_распоряжений
             bool no_error = true;
             String Error_msg = "";
 
+            if (this.organization_txtbx.Text.Trim() == "")
+            {
+                no_error = false;
+                this.organization_txtbx.BackColor = System.Drawing.Color.Salmon;
+                Error_msg = Error_msg + "\n   - организация";
+            }
+
+            if (this.structure_unit_txtbx.Text.Trim() == "")
+            {
+                no_error = false;
+                this.structure_unit_txtbx.BackColor = System.Drawing.Color.Salmon;
+                Error_msg = Error_msg + "\n   - структурная единица";
+            }
+
             if (this.main_worker_txtbx.Text.Trim() == "")
             {
                 no_error = false;
@@ -83,6 +97,8 @@ namespace Генератор_распоряжений
 
             if (Result == DialogResult.Yes)
             {
+                this.organization_txtbx.Text = Распоряжение.Организация;
+                this.structure_unit_txtbx.Text = Распоряжение.Структурная_единица;
                 this.date_dtp.Value = Распоряжение.Дата;
                 this.main_worker_txtbx.Text = Распоряжение.Производитель;
                 this.coordinator_txtbx.Text = Распоряжение.Допускающий;
@@ -301,6 +317,8 @@ namespace Генератор_распоряжений
                     if (Result == DialogResult.Yes)
                     {
                         this.date_dtp.Value = DateTime.Today;
+                        this.organization_txtbx.Text = _Распоряжение_шаблон.Организация;
+                        this.structure_unit_txtbx.Text = _Распоряжение_шаблон.Структурная_единица;
                         this.main_worker_txtbx.Text = _Распоряжение_шаблон.Производитель;
                         this.coordinator_txtbx.Text = _Распоряжение_шаблон.Допускающий;
                         this.group_txtbx.Text = _Распоряжение_шаблон.Бригада;
@@ -334,6 +352,8 @@ namespace Генератор_распоряжений
             if (Dlg_result == DialogResult.OK)
             {
                 DateTime Дата = this.date_dtp.Value;
+                String Организация = this.organization_txtbx.Text.Trim();
+                String Структурная_единица = this.structure_unit_txtbx.Text.Trim();
                 String Производитель = this.main_worker_txtbx.Text.Trim();
                 String Допускающий = this.coordinator_txtbx.Text.Trim();
                 String Бригада = this.group_txtbx.Text.Trim();
@@ -343,7 +363,7 @@ namespace Генератор_распоряжений
                 String Условия = this.work_terms_txtbx.Text.Trim();
                 String Выдал = this.order_source_txtbx.Text.Trim();
 
-                Распоряжение_шаблон _Распоряжение_шаблон = new Распоряжение_шаблон(Производитель, Допускающий, Бригада, Задание, Объект, Расположение, Условия, Выдал);
+                Распоряжение_шаблон _Распоряжение_шаблон = new Распоряжение_шаблон(Организация, Структурная_единица, Производитель, Допускающий, Бригада, Задание, Объект, Расположение, Условия, Выдал);
 
                 string file_name = this.save_file_dlg.FileName;
                 FileStream file_stream = new FileStream(file_name, FileMode.Create);
@@ -363,6 +383,8 @@ namespace Генератор_распоряжений
             if (Проверка_на_корректность_заполнения() == true)
             {
                 DateTime Дата = this.date_dtp.Value;
+                String Организация = this.organization_txtbx.Text.Trim();
+                String Структурная_единица = this.structure_unit_txtbx.Text.Trim();
                 String Производитель = this.main_worker_txtbx.Text.Trim();
                 String Допускающий = this.coordinator_txtbx.Text.Trim();
                 String Бригада = this.group_txtbx.Text.Trim();
@@ -372,7 +394,7 @@ namespace Генератор_распоряжений
                 String Условия = this.work_terms_txtbx.Text.Trim();
                 String Выдал = this.order_source_txtbx.Text.Trim();
 
-                Распоряжение _Распоряжение = new Распоряжение(Дата, Производитель, Допускающий, Бригада, Задание, Объект, Расположение, Условия, Выдал);
+                Распоряжение _Распоряжение = new Распоряжение(Дата, Организация, Структурная_единица, Производитель, Допускающий, Бригада, Задание, Объект, Расположение, Условия, Выдал);
                 Формы.Instance().Очередь_печати.Добавить_распоряжение(_Распоряжение);
             }
         }

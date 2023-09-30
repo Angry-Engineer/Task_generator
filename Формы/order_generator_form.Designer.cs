@@ -39,7 +39,6 @@
             this.coordinator_txtbx = new System.Windows.Forms.RichTextBox();
             this.group_txtbx = new System.Windows.Forms.RichTextBox();
             this.coordinator_lbl = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.coordinator_sign_lbl = new System.Windows.Forms.Label();
             this.order_source_sign_lbl = new System.Windows.Forms.Label();
             this.coordinator_sign_place_lbl = new System.Windows.Forms.Label();
@@ -49,7 +48,6 @@
             this.coordinator__name_lbl = new System.Windows.Forms.Label();
             this.order_source_sign_place_lbl = new System.Windows.Forms.Label();
             this.order_nn_lbl_ogf = new System.Windows.Forms.Label();
-            this.order_title_lbl = new System.Windows.Forms.Label();
             this.order_source_lbl = new System.Windows.Forms.Label();
             this.work_terms_lbl = new System.Windows.Forms.Label();
             this.work_place_lbl = new System.Windows.Forms.Label();
@@ -65,6 +63,8 @@
             this.load_from_file_bttn = new System.Windows.Forms.Button();
             this.open_file_dlg = new System.Windows.Forms.OpenFileDialog();
             this.save_file_dlg = new System.Windows.Forms.SaveFileDialog();
+            this.structure_unit_txtbx = new System.Windows.Forms.RichTextBox();
+            this.organization_txtbx = new System.Windows.Forms.RichTextBox();
             this.template_pnl.SuspendLayout();
             this.buttons_pnl.SuspendLayout();
             this.SuspendLayout();
@@ -73,6 +73,8 @@
             // 
             this.template_pnl.BackColor = System.Drawing.Color.White;
             this.template_pnl.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.template_pnl.Controls.Add(this.organization_txtbx);
+            this.template_pnl.Controls.Add(this.structure_unit_txtbx);
             this.template_pnl.Controls.Add(this.order_source_txtbx);
             this.template_pnl.Controls.Add(this.work_terms_txtbx);
             this.template_pnl.Controls.Add(this.work_place_txtbx);
@@ -82,7 +84,6 @@
             this.template_pnl.Controls.Add(this.coordinator_txtbx);
             this.template_pnl.Controls.Add(this.group_txtbx);
             this.template_pnl.Controls.Add(this.coordinator_lbl);
-            this.template_pnl.Controls.Add(this.label1);
             this.template_pnl.Controls.Add(this.coordinator_sign_lbl);
             this.template_pnl.Controls.Add(this.order_source_sign_lbl);
             this.template_pnl.Controls.Add(this.coordinator_sign_place_lbl);
@@ -92,7 +93,6 @@
             this.template_pnl.Controls.Add(this.coordinator__name_lbl);
             this.template_pnl.Controls.Add(this.order_source_sign_place_lbl);
             this.template_pnl.Controls.Add(this.order_nn_lbl_ogf);
-            this.template_pnl.Controls.Add(this.order_title_lbl);
             this.template_pnl.Controls.Add(this.order_source_lbl);
             this.template_pnl.Controls.Add(this.work_terms_lbl);
             this.template_pnl.Controls.Add(this.work_place_lbl);
@@ -214,19 +214,6 @@
             this.coordinator_lbl.Text = "Допускающему:";
             this.coordinator_lbl.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // label1
-            // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label1.BackColor = System.Drawing.Color.White;
-            this.label1.Font = new System.Drawing.Font("Arial", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(455, 12);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(110, 20);
-            this.label1.TabIndex = 364;
-            this.label1.Text = "Цех ТАИ";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
             // coordinator_sign_lbl
             // 
             this.coordinator_sign_lbl.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
@@ -341,20 +328,6 @@
             this.order_nn_lbl_ogf.TabIndex = 353;
             this.order_nn_lbl_ogf.Text = "_______________";
             this.order_nn_lbl_ogf.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // order_title_lbl
-            // 
-            this.order_title_lbl.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.order_title_lbl.BackColor = System.Drawing.Color.White;
-            this.order_title_lbl.Font = new System.Drawing.Font("Arial", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.order_title_lbl.ForeColor = System.Drawing.Color.Black;
-            this.order_title_lbl.Location = new System.Drawing.Point(12, 12);
-            this.order_title_lbl.Name = "order_title_lbl";
-            this.order_title_lbl.Size = new System.Drawing.Size(417, 20);
-            this.order_title_lbl.TabIndex = 352;
-            this.order_title_lbl.Text = "Филиал ПАО \"ОГК-2\" - Сургутская ГРЭС-1";
-            this.order_title_lbl.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // order_source_lbl
             // 
@@ -531,6 +504,34 @@
             this.save_file_dlg.DefaultExt = "xml";
             this.save_file_dlg.Filter = "Файлы шаблонов распоряжений|*.xml";
             // 
+            // structure_unit_txtbx
+            // 
+            this.structure_unit_txtbx.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.structure_unit_txtbx.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.structure_unit_txtbx.Location = new System.Drawing.Point(468, 6);
+            this.structure_unit_txtbx.MaxLength = 15;
+            this.structure_unit_txtbx.Multiline = false;
+            this.structure_unit_txtbx.Name = "structure_unit_txtbx";
+            this.structure_unit_txtbx.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.None;
+            this.structure_unit_txtbx.Size = new System.Drawing.Size(322, 26);
+            this.structure_unit_txtbx.TabIndex = 366;
+            this.structure_unit_txtbx.Text = "Цех ТАИ";
+            // 
+            // organization_txtbx
+            // 
+            this.organization_txtbx.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.organization_txtbx.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.organization_txtbx.Location = new System.Drawing.Point(15, 6);
+            this.organization_txtbx.MaxLength = 50;
+            this.organization_txtbx.Multiline = false;
+            this.organization_txtbx.Name = "organization_txtbx";
+            this.organization_txtbx.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.None;
+            this.organization_txtbx.Size = new System.Drawing.Size(417, 26);
+            this.organization_txtbx.TabIndex = 367;
+            this.organization_txtbx.Text = "Филиал ПАО \"ОГК-2\" - Сургутская ГРЭС-1";
+            // 
             // order_generator_form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -554,7 +555,6 @@
         #endregion
 
         private System.Windows.Forms.Panel template_pnl;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label coordinator_sign_lbl;
         private System.Windows.Forms.Label order_source_sign_lbl;
         private System.Windows.Forms.Label coordinator_sign_place_lbl;
@@ -564,7 +564,6 @@
         private System.Windows.Forms.Label coordinator__name_lbl;
         private System.Windows.Forms.Label order_source_sign_place_lbl;
         private System.Windows.Forms.Label order_nn_lbl_ogf;
-        private System.Windows.Forms.Label order_title_lbl;
         private System.Windows.Forms.Label order_source_lbl;
         private System.Windows.Forms.Label work_terms_lbl;
         private System.Windows.Forms.Label work_place_lbl;
@@ -589,6 +588,8 @@
         private System.Windows.Forms.RichTextBox coordinator_txtbx;
         private System.Windows.Forms.Button add_to_spool_bttn;
         private System.Windows.Forms.Button print_spool_bttn;
+        private System.Windows.Forms.RichTextBox structure_unit_txtbx;
+        private System.Windows.Forms.RichTextBox organization_txtbx;
     }
 }
 
